@@ -1,0 +1,20 @@
+﻿@model EventTableVeiwModel
+
+<h2>Add Event</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.EventName)
+        @Html.TextBoxFor(m => m.EventName)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.EventLocation)
+        @Html.TextBoxFor(m => m.EventLocation)
+    </div
+      <div>
+        @Html.LabelFor(m => m.EventParticipants)
+        @Html.TextBoxFor(m => m.EventParticipants)
+    </div>
+    <button type="submit">Add</button>
+}

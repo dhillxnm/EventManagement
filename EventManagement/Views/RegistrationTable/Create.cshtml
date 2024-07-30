@@ -1,0 +1,33 @@
+﻿@model EventManagement.Models.RegistrationTableViewModel
+
+<h2>Add Registration</h2>
+@using (Html.BeginForm("Create", "RegistrationTable", FormMethod.Post))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div>
+        @Html.LabelFor(m => m.ParticipateName)
+        @Html.TextBoxFor(m => m.ParticipateName)
+        @Html.ValidationMessageFor(m => m.ParticipateName, "", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.ParticipateEmail)
+        @Html.TextBoxFor(m => m.ParticipateEmail)
+        @Html.ValidationMessageFor(m => m.ParticipateEmail, "", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.ParticipateAddress)
+        @Html.TextBoxFor(m => m.ParticipateAddress)
+        @Html.ValidationMessageFor(m => m.ParticipateAddress, "", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.EventId, "Event")
+        @Html.DropDownListFor(m => m.EventId, new SelectList(Model.Events, "EventId", "EventName"), "Select an Event")
+        @Html.ValidationMessageFor(m => m.EventId, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+}

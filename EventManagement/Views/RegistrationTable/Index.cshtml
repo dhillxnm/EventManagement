@@ -1,0 +1,26 @@
+﻿@model List<RegistrationTable>
+<h2>Participants</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ParticipateName</th>
+            <th>ParticipateEmail</th>
+            <th>ParticipateAddress</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var registrations in Model)
+        {
+            <tr>
+                <td>@registrations.ParticipateName</td>
+                <td>@registrations.ParticipateEmail</td>
+                <td>@registrations.ParticipateAddress</td>
+                <td>
+                    <a href="/RegistrationTable/Delete/@registrations.RegistrationId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

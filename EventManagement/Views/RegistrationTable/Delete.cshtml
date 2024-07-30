@@ -1,0 +1,17 @@
+﻿@model EventManagement.Models.RegistrationTable
+
+<h2>Delete Event</h2>
+<h4>YOU WANT TO DELETE THIS REGISTRATION?</h4>
+<div>
+    <p>@Model.ParticipateName</p>
+    <p>@Model.ParticipateEmail</p>
+    <p>@Model.ParticipateAddress</p>
+@*     <p>Event: @(Model.Event)</p> *@
+</div>
+
+@using (Html.BeginForm())
+{
+    <button type="submit" class="btn btn-primary">Delete</button>
+}
+<a href="/RegistrationTable/Index">Back to List</a>
+
